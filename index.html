@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thuật toán Mật mã - Cryptography Tools</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Công cụ Mật mã của Tú IT</h1>
+            <p>Các thuật toán mã hóa cơ bản </p>
+        </header>
+        <div class="algorithm-selector">
+            <button class="nut-btn active" data-algorithm="caesar">Caesar</button>
+            <button class="nut-btn" data-algorithm="affine">Affine</button>
+            <button class="nut-btn" data-algorithm="vigenere">Vigenère</button>
+            <button class="nut-btn" data-algorithm="playfair">Playfair</button>
+            <button class="nut-btn" data-algorithm="columnar">Hoán vị</button>
+        </div>
+
+        <div class="cipher-container">
+            <!-- Caesar Cipher -->
+            <div class="cipher-panel active" id="caesar">
+                <h2>Caesar Cipher</h2>
+                <p>Mã hóa bằng cách dịch chuyển ký tự theo một độ lệch k.</p>
+                
+                <div class="input-group">
+                    <label for="caesar-text">Văn bản:</label>
+                    <textarea id="caesar-text" placeholder="Nhập văn bản cần mã hóa/giải mã"></textarea>
+                </div>
+                
+                <div class="input-group">
+                    <label for="caesar-shift">Độ dịch (k):</label>
+                    <input type="number" id="caesar-shift" value="3" min="1" max="25">
+                </div>
+                
+                <div class="button-group">
+                    <button onclick="caesarEncrypt()">Mã hóa</button>
+                    <button onclick="caesarDecrypt()">Giải mã</button>
+                </div>
+                
+                <div class="output">
+                    <label>Kết quả:</label>
+                    <textarea id="caesar-result" readonly></textarea>
+                </div>
+            </div>
+
+            <!-- Affine Cipher -->
+            <div class="cipher-panel" id="affine">
+                <h2>Affine Cipher</h2>
+                <p>Mã hóa theo công thức: C = (a*P + b) mod 26</p>
+                
+                <div class="input-group">
+                    <label for="affine-text">Văn bản:</label>
+                    <textarea id="affine-text" placeholder="Nhập văn bản cần mã hóa/giải mã"></textarea>
+                </div>
+                
+                <div class="key-group">
+                    <div class="input-group">
+                        <label for="affine-a">Khóa a (nguyên tố cùng nhau với 26):</label>
+                        <input type="number" id="affine-a" value="5" min="1">
+                    </div>
+                    <div class="input-group">
+                        <label for="affine-b">Khóa b:</label>
+                        <input type="number" id="affine-b" value="8" min="0">
+                    </div>
+                </div>
+                
+                <div class="button-group">
+                    <button onclick="affineEncrypt()">Mã hóa</button>
+                    <button onclick="affineDecrypt()">Giải mã</button>
+                </div>
+                
+                <div class="output">
+                    <label>Kết quả:</label>
+                    <textarea id="affine-result" readonly></textarea>
+                </div>
+            </div>
+
+            <!-- Vigenère Cipher -->
+            <div class="cipher-panel" id="vigenere">
+                <h2>Vigenère Cipher</h2>
+                <p>Mã hóa sử dụng khóa lặp lại theo từng ký tự.</p>
+                
+                <div class="input-group">
+                    <label for="vigenere-text">Văn bản:</label>
+                    <textarea id="vigenere-text" placeholder="Nhập văn bản cần mã hóa/giải mã"></textarea>
+                </div>
+                
+                <div class="input-group">
+                    <label for="vigenere-key">Khóa:</label>
+                    <input type="text" id="vigenere-key" value="KEY" placeholder="Nhập khóa (chỉ chữ cái)">
+                </div>
+                
+                <div class="button-group">
+                    <button onclick="vigenereEncrypt()">Mã hóa</button>
+                    <button onclick="vigenereDecrypt()">Giải mã</button>
+                </div>
+                
+                <div class="output">
+                    <label>Kết quả:</label>
+                    <textarea id="vigenere-result" readonly></textarea>
+                </div>
+            </div>
+
+            <!-- Playfair Cipher -->
+            <div class="cipher-panel" id="playfair">
+                <h2>Playfair Cipher</h2>
+                <p>Mã hóa theo từng cặp ký tự sử dụng ma trận khóa 5x5.</p>
+                
+                <div class="input-group">
+                    <label for="playfair-text">Văn bản:</label>
+                    <textarea id="playfair-text" placeholder="Nhập văn bản cần mã hóa/giải mã"></textarea>
+                </div>
+                
+                <div class="input-group">
+                    <label for="playfair-key">Khóa:</label>
+                    <input type="text" id="playfair-key" value="MONARCHY" placeholder="Nhập khóa">
+                </div>
+                
+                <div class="button-group">
+                    <button onclick="playfairEncrypt()">Mã hóa</button>
+                    <button onclick="playfairDecrypt()">Giải mã</button>
+                    <button onclick="showPlayfairMatrix()">Hiển thị Ma trận</button>
+                </div>
+                
+                <div class="matrix-display" id="playfair-matrix"></div>
+                
+                <div class="output">
+                    <label>Kết quả:</label>
+                    <textarea id="playfair-result" readonly></textarea>
+                </div>
+            </div>
+
+            <!-- Columnar Transposition -->
+            <div class="cipher-panel" id="columnar">
+                <h2>HOÁN VỊ</h2>
+                <p>Mã hóa bằng cách hoán vị các cột theo thứ tự khóa.</p>
+                
+                <div class="input-group">
+                    <label for="columnar-text">Văn bản:</label>
+                    <textarea id="columnar-text" placeholder="Nhập văn bản cần mã hóa/giải mã"></textarea>
+                </div>
+                
+                <div class="input-group">
+                    <label for="columnar-key">Khóa (ví dụ: 3142):</label>
+                    <input type="text" id="columnar-key" value="3142" placeholder="Nhập khóa số">
+                </div>
+                
+                <div class="button-group">
+                    <button onclick="columnarEncrypt()">Mã hóa</button>
+                    <button onclick="columnarDecrypt()">Giải mã</button>
+                </div>
+                
+                <div class="output">
+                    <label>Kết quả:</label>
+                    <textarea id="columnar-result" readonly></textarea>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

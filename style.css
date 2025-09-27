@@ -1,0 +1,191 @@
+/* Thiết lập chung */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f7f6;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 20px 5px;
+    margin: 0;
+}
+
+.container {
+    background: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 800px;
+    overflow: hidden;
+}
+
+/* Header */
+header {
+    background: linear-gradient(135deg, #4CAF50, #2E7D32); /* Màu xanh lá đậm */
+    color: white;
+    padding: 10px 15px;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 1.8em;
+    font-weight: 600;
+}
+
+header p {
+    margin: 5px 0 0;
+    font-size: 0.9em;
+    opacity: 0.9;
+}
+
+/* Tab Selector */
+.algorithm-selector {
+    display: flex;
+    justify-content: space-around;
+    background-color: #e8f5e9; /* Nền xanh lá nhạt */
+    border-bottom: 2px solid #e0e0e0;
+}
+
+.nut-btn {
+    flex-grow: 1;
+    padding: 15px 10px;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    font-size: 1em;
+    color: #555;
+    transition: all 0.3s ease;
+    border-bottom: 3px solid transparent;
+    font-weight: 500;
+}
+
+.nut-btn:hover {
+    background-color: #dcedc8;
+    color: #333;
+}
+
+.nut-btn.active {
+    color: #2E7D32;
+    border-bottom: 3px solid #2E7D32;
+    background-color: #ffffff;
+    font-weight: 600;
+}
+
+/* Content Panel */
+.cipher-container {
+    padding: 10px;
+}
+
+.cipher-panel {
+    display: none;
+}
+
+.cipher-panel.active {
+    display: block;
+}
+
+.cipher-panel h2 {
+    color: #333;
+    margin-top: 0;
+    font-size: 1.6em;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+}
+
+.cipher-panel p {
+    color: #777;
+    margin-bottom: 20px;
+}
+
+/* Input Groups */
+.input-group, .output {
+    margin-bottom: 20px;
+}
+
+.input-group label, .output label {
+    display: block;
+    margin: 10px 0 5px;
+    font-weight: 600;
+    color: #444;
+}
+
+textarea, input[type="number"], input[type="text"] {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    box-sizing: border-box;
+    font-size: 1em;
+    resize: vertical;
+}
+
+textarea {
+    min-height: 100px;
+}
+
+#caesar-result, #affine-result, #vigenere-result, #playfair-result, #columnar-result {
+    background-color: #e9ecef;
+    font-family: 'Consolas', monospace;
+    color: #1a1a1a;
+}
+
+/* Key Group (for Affine) */
+.key-group {
+    display: flex;
+    gap: 20px;
+}
+
+.key-group .input-group {
+    flex: 1;
+}
+
+/* Buttons */
+.button-group {
+    display: flex;
+    gap: 15px;
+    margin: 25px 0;
+}
+
+.button-group button {
+    flex-grow: 1;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 6px;
+    color: white;
+    font-size: 1.1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.1s;
+}
+
+.button-group button:nth-child(1) { /* Mã hóa (Encrypt) */
+    background-color: #4CAF50; 
+}
+.button-group button:nth-child(1):hover {
+    background-color: #388E3C;
+}
+
+.button-group button:nth-child(2) { /* Giải mã (Decrypt) */
+    background-color: #E64A19; /* Màu cam/đỏ */
+}
+.button-group button:nth-child(2):hover {
+    background-color: #D84315;
+}
+
+/* Playfair Matrix Display */
+.matrix-display {
+    margin-top: 10px;
+    margin-bottom: 20px;
+    padding: 15px;
+    background-color: #f7f7f7;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-family: 'Consolas', monospace;
+    white-space: pre; /* Giữ nguyên định dạng */
+    text-align: center;
+    font-size: 1.2em;
+}
+
+button:active {
+    transform: scale(0.98);
+}
