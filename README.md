@@ -1,10 +1,10 @@
 # Sencuri_bai1
 ### TÌM HIỂU CÁC PHƯƠNG PHÁP MÃ HOÁ CỔ ĐIỂN
-Caesar
-Affine
-Hoán vị
-Vigenère
-Playfair
+Caesar,
+Affine,
+Hoán vị,
+Vigenère,
+Playfair,
 
 ### Với mỗi phương pháp, hãy tìm hiểu:
 Tên gọi
