@@ -24,6 +24,7 @@ Cách phá mã: Thử tất cả 26 khóa (brute force).
 #### Hình ảnh kiểm thử
 #### Mã hóa:
 <img width="1080" height="960" alt="image" src="https://github.com/user-attachments/assets/ed3df442-b41a-4ab7-885f-8d324a9cb0b0" />
+
 #### Giải mã:
 <img width="915" height="930" alt="image" src="https://github.com/user-attachments/assets/630204f5-c029-4ef6-8cb9-bf4ca769a8a2" />
 
@@ -37,6 +38,7 @@ Cách phá mã: Dùng phân tích tần suất hoặc thử brute force toàn b�
 #### Hình ảnh kiểm thử
 #### Mã hóa:
  <img width="925" height="891" alt="image" src="https://github.com/user-attachments/assets/2751dd0a-1417-44ea-8410-ae89cf0b449f" />
+ 
 #### Giải mã:
 <img width="918" height="866" alt="image" src="https://github.com/user-attachments/assets/8196b7bd-eb81-41d3-97c7-5b6a4991e8e0" />
 
@@ -50,6 +52,7 @@ Cách phá mã: Dùng phương pháp Kasiski hoặc Friedman để đoán độ 
 #### Hình ảnh kiểm thử
 #### Mã hóa:
  <img width="923" height="854" alt="image" src="https://github.com/user-attachments/assets/eda15454-b51c-40e8-ad2e-cbe39aeb6f03" />
+ 
 #### Giải mã:
 <img width="940" height="851" alt="image" src="https://github.com/user-attachments/assets/96b74b13-b485-421e-9c01-2e7bf82f8672" />
 
@@ -65,6 +68,7 @@ Cách phá mã: Dùng phân tích tần suất cặp chữ cái (digraph frequen
 #### Hình ảnh kiểm thử
 #### Mã hóa:
  <img width="1061" height="895" alt="_C__Users_Dell_Desktop_Cong20thong%20tin_Mon_Sencurity_index html" src="https://github.com/user-attachments/assets/e2af9a44-652f-4087-8cee-6418fe538a3b" />
+ 
 #### Giải mã:
 <img width="1114" height="880" alt="_C__Users_Dell_Desktop_Cong20thong%20tin_Mon_Sencurity_indexhtml" src="https://github.com/user-attachments/assets/dc6384f0-ca7d-4ec9-936b-42c14d7e757e" />
 
@@ -78,5 +82,6 @@ Cách phá mã: Với n nhỏ thì có thể brute force, với n lớn thì ph�
 #### Hình ảnh kiểm thử
 #### Mã hóa:
  <img width="1088" height="881" alt="image" src="https://github.com/user-attachments/assets/a50ff826-bd37-420e-8a5b-a52a94466b00" />
+ 
 #### Giải mã:
 <img width="1046" height="903" alt="image" src="https://github.com/user-attachments/assets/af1025b9-3455-4e52-80f3-8295b34d692f" />
